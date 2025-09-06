@@ -1,36 +1,103 @@
-<html xmlns:th="http://www.thymeleaf.org">
-    <head> 
-        <link th:href="@{/form-stylesheet.css}" rel="stylesheet"> 
-    </head>    
-    <body>
-        <div class="topnav">
-            <a class="active" th:href="@{/}" >Form</a>
-            <a th:href="@{/inventory}">Inventory</a>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Superstore</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" th:href="@{/}">Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/inventory}">Inventory</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="container">    
-            <h2> Global Superstore </h2>
-            <form method="post" th:object="${item}" th:action="@{/submitItem}">
-                <p style="color:red" th:errors="*{category}"> </p>
-               <select class="select" th:field="*{category}">
-                    <option style="color:blue" value="">Choose Category</option>
-                    <option style="color:blue"
-                            th:each="cat : ${categories}"
-                            th:value="${cat}"
-                            th:text="${cat}">
-                    </option>
-                </select>
-                <p style="color:red" th:errors="*{name}"> </p>
-                <input type="text" placeholder="Name" th:field="*{name}">
-                <p style="color:red" th:errors="*{price}"> </p>
-                <p style="color:red" th:errors="*{discount}"> </p>
-                <input class="half" type="text" placeholder="Price" th:field="*{price}">
-                <input class="half" type="text" placeholder="Discount" th:field="*{discount}">
-                <h4>Order Date</h4>
-                <p style="color:red" th:errors="*{date}"> </p>
-                <input type="date" style="color:black" th:field="*{date}">
-                <input type="hidden" th:field="*{id}">
-                <input type="submit" value="Submit Item">
-            </form>
-        </div>      
-    </body>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <h2 class="text-primary fw-bold">Global Superstore</h2>
+                </div>
+
+                <!-- Form Card -->
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <form method="post" th:object="${item}" th:action="@{/submitItem}">
+                            
+                            <!-- Category -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Category</label>
+                                <select class="form-select" th:field="*{category}">
+                                    <option value="">Choose Category</option>
+                                    <option th:each="cat : ${categories}"
+                                            th:value="${cat}"
+                                            th:text="${cat}">
+                                    </option>
+                                </select>
+                                <div class="text-danger small mt-1" th:errors="*{category}"></div>
+                            </div>
+
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Name</label>
+                                <input type="text" class="form-control" placeholder="Name" th:field="*{name}">
+                                <div class="text-danger small mt-1" th:errors="*{name}"></div>
+                            </div>
+
+                            <!-- Price and Discount Row -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">Price</label>
+                                    <input type="text" class="form-control" placeholder="Price" th:field="*{price}">
+                                    <div class="text-danger small mt-1" th:errors="*{price}"></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">Discount</label>
+                                    <input type="text" class="form-control" placeholder="Discount" th:field="*{discount}">
+                                    <div class="text-danger small mt-1" th:errors="*{discount}"></div>
+                                </div>
+                            </div>
+
+                            <!-- Order Date -->
+                            <div class="mb-4">
+                                <h5 class="fw-semibold mb-2">Order Date</h5>
+                                <input type="date" class="form-control" th:field="*{date}">
+                                <div class="text-danger small mt-1" th:errors="*{date}"></div>
+                            </div>
+
+                            <!-- Hidden ID -->
+                            <input type="hidden" th:field="*{id}">
+
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit Item</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
