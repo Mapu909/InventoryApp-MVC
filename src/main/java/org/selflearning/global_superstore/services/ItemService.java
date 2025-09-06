@@ -24,7 +24,6 @@ public class ItemService {
     public Item getItemById(final String id) {
         if (id.equals(""))
             return new Item();
-
         return itemRepository.getItemById(id);
     }
 

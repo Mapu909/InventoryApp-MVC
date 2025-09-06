@@ -29,8 +29,10 @@ public class ItemsController {
     public String handleItemSubmission(@Valid final Item item, final BindingResult validationResult,
             final Model model) {
 
-        if (validationResult.hasErrors())
+        if (validationResult.hasErrors()) {
+            model.addAttribute("categories", ConstantModels.ITEMS_CATEGORIES);
             return Views.FORM;
+        }
 
         itemService.addOrUpdateItem(item);
 
