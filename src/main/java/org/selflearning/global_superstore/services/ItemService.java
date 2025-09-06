@@ -39,4 +39,8 @@ public class ItemService {
         else
             addItem(item);
     }
+
+    public void deleteItem(final String id) {
+        itemRepository.deleteItem(id);
+    }
 }

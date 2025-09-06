@@ -29,4 +29,8 @@ public class ItemRepository {
     public void updateItem(final Item item) {
         dataStore.set(dataStore.indexOf(item), item);
     }
+
+    public void deleteItem(final String id) {
+        dataStore.removeIf((item) -> item.getId().equals(id));
+    }
 }

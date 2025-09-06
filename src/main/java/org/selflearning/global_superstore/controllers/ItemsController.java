@@ -10,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import jakarta.validation.Valid;
 
 @Controller
@@ -42,6 +41,14 @@ public class ItemsController {
     public String getMethodName(final Model model) {
         model.addAttribute("items", itemService.getAllItems());
         return Views.INVENTORY;
+    }
+
+    @GetMapping("/delete")
+    public String deleteItem(@RequestParam(required = true, defaultValue = "") final String id) {
+        if (id.equals(""))
+            return Views.INVENTORY;
+        itemService.deleteItem(id);
+        return new StringBuilder("redirect:").append(Views.INVENTORY).toString();
     }
 
 }
